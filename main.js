@@ -17,7 +17,7 @@ var btnCarrera = document.querySelector("#btnCarrera").addEventListener("click",
     }
 
     correrTortuga(){
-        while(this._sumaT < 100){
+        while(this._sumaT < 90){
             let avance = Math.trunc(Math.random()*10)+1;
             
 
@@ -42,7 +42,7 @@ class Liebre extends Corredor{
     }
 
     correrLiebre(){
-        while(this._suma < 100 ){
+        while(this._suma < 90 ){
             let avanceL = Math.trunc(Math.random()*100) + 1;
             
             if(avanceL>=1 && avanceL <= 20){
@@ -61,19 +61,30 @@ class Liebre extends Corredor{
     }
 }
 
-    var tortuga = new Tortuga();
-    var liebre = new Liebre();
-
-    tortuga.correrTortuga();
-    liebre.correrLiebre();
-
-    if(tortuga.correrTortuga()>100){
-        console.log("Ganó la tortuga conchesumadre");
-    }else if(liebre.correrLiebre()>100){
-        console.log("Ganó la liebre malparida");
-    }else if(liebre.correrLiebre()> 100 && tortuga.correrTortuga() > 100){
-        console.log("Hubo empate xd");
+class Ganador{
+    constructor(){
     }
+    finCompeticion(){
+        var tortuga = new Tortuga();
+        var liebre = new Liebre();
+    
+        let t = tortuga.correrTortuga();
+        let l = liebre.correrLiebre();
+    
+        if(t>90){
+            alert("Ganó la tortuga conchesumadre");
+        }else if(l>90){
+            alert("Ganó la liebre malparida");
+        }else if(l> 90 && t > 90){
+            alert("Hubo empate xd");
+        }
+    }
+}
+
+var ganador = new Ganador();
+ganador.finCompeticion();
+
+
 
 
 })
